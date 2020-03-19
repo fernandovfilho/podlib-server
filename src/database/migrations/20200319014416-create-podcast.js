@@ -9,7 +9,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       feed_url: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       number_of_items: {
         type: Sequelize.INTEGER
@@ -21,13 +21,13 @@ module.exports = {
         type: Sequelize.STRING
       },
       description: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       author: {
         type: Sequelize.STRING
       },
       image: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       created_at: {
         allowNull: false,

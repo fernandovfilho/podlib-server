@@ -10,13 +10,13 @@ class Podcast extends Model {
                 primaryKey: true,
                 autoIncrement: true
             },
-            feed_url: DataTypes.STRING,
+            feed_url: DataTypes.TEXT,
             number_of_items: DataTypes.INTEGER,
             name: DataTypes.STRING,
             language: DataTypes.STRING,
-            description: DataTypes.STRING,
+            description: DataTypes.TEXT,
             author: DataTypes.STRING,
-            image: DataTypes.STRING
+            image: DataTypes.TEXT
         },{
             sequelize,
             underscored: true,
