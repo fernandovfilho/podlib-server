@@ -9,7 +9,7 @@ module.exports = {
     
     async updateFeed(){
         
-        const job = new cronjob('5 * * * * *', async () => {
+        const job = new cronjob('* * 1 * * *', async () => {
             
             const podcasts = await Podcast.findAll();
             
