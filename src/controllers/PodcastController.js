@@ -17,6 +17,13 @@ module.exports = {
             return res.status(400).json({ error: 'Podcast create error' });
         }
 
+    },
+
+    async index(req, res){
+
+        const podcasts = await Podcast.findAll({order: ['created_at']})
+        return res.json(podcasts);
+
     }
 
 
