@@ -8,7 +8,7 @@ module.exports = {
 
         const episodes = await Episode.findAll({
             where: { podcast_id },
-            order: ['pub_date']
+            order: [['pub_date', 'DESC']]
         });
         return res.json(episodes);
 
