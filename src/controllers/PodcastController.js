@@ -1,4 +1,5 @@
 const Podcast = require('../models/Podcast');
+const PodcastFeedSearch = require('../cronjobs/PodcastFeedSearch');
 
 module.exports = {
 
@@ -9,7 +10,9 @@ module.exports = {
         const podcast = await Podcast.create({
             name,
             feed_url
-        })
+        });
+
+        PodcastFeedSearch.updateAPodcast(podcast);
 
         if(podcast){
             return res.json(podcast);

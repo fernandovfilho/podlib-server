@@ -8,16 +8,10 @@ const Episode = require('../models/Episode');
 
 
 module.exports = {
-    
-    async updateFeed(){
-        
-        const job = new cronjob('0 0 * * * *', async () => {
-            
-            const podcasts = await Podcast.findAll();
-            
-            podcasts.map(async podcast => {
-                
-                let feed = await parser.parseURL(podcast.feed_url);
+
+    async updateAPodcast(podcast){
+
+        let feed = await parser.parseURL(podcast.feed_url);
                 
                 const { description, image, itunes, items } = feed;
                 
@@ -59,9 +53,21 @@ module.exports = {
                         
                     }
                     
-                })
+                });
+
+    },
+    
+    async updateFeed(){
+        
+        const job = new cronjob('0 0 * * * *', async () => {
+            
+            const podcasts = await Podcast.findAll();
+            
+            podcasts.map(async podcast => {
                 
-            })
+                this.updateAPodcast(podcast);
+                
+            });
             
         }, null, true, 'America/Sao_Paulo');
         job.start();
