@@ -59,7 +59,7 @@ module.exports = {
     
     async updateFeed(){
         
-        const job = new cronjob('0 0 * * * *', async () => {
+        /* const job = new cronjob('0 0 * * * *', async () => {
             
             const podcasts = await Podcast.findAll();
             
@@ -70,7 +70,7 @@ module.exports = {
             });
             
         }, null, true, 'America/Sao_Paulo');
-        job.start();
+        job.start(); */
         
     }
     
