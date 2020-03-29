@@ -5,11 +5,12 @@ module.exports = {
 
     async store(req, res){
 
-        const { name, feed_url } = req.body;
+        const { name, feed_url, category } = req.body;
 
         const podcast = await Podcast.create({
             name,
-            feed_url
+            feed_url,
+            category
         });
 
         PodcastFeedSearch.updateAPodcast(podcast);
