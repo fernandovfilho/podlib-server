@@ -16,7 +16,8 @@ class Podcast extends Model {
             language: DataTypes.STRING,
             description: DataTypes.TEXT,
             author: DataTypes.STRING,
-            image: DataTypes.TEXT
+            image: DataTypes.TEXT,
+            category: DataTypes.STRING
         },{
             sequelize,
             underscored: true,
